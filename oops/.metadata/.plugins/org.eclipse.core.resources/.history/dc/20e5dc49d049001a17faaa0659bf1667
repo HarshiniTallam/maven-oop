@@ -1,0 +1,50 @@
+package com.epam2.oops;
+
+import java.util.TreeMap;
+
+public class Chocolates extends Gift {
+	String name;
+	
+	public static TreeMap<String, Integer> tm1 = new TreeMap<String, Integer>();
+	public static TreeMap<String, Integer> tm2 = new TreeMap<String, Integer>();
+	
+	public Chocolates() {
+		name = "";
+		price = 0;
+		weight = 0;
+	}
+
+	public Chocolates(int price, int weight, String name) {
+		super();
+		this.price = price;
+		this.weight = weight;
+		this.name = name;
+		list.add(name);
+		wgt.add(weight);
+		cost.add(price);
+		if(!tm1.containsKey(name)) {
+			tm1.put(name, weight);
+		} else {
+			tm1.put(name, weight + tm1.get(name));
+			
+		}
+		if(!tm2.containsKey(name)) {
+			tm2.put(name, price);
+		} else {
+			tm2.put(name, price + tm2.get(name));	
+		}
+		
+	}
+
+    public static void sortByWeight() {
+		
+	}
+	
+	public static void sortByPrice() {
+		
+	}
+	
+	
+	
+	
+}

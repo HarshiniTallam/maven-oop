@@ -1,0 +1,70 @@
+package com.epam2.oops;
+
+import java.util.Comparator;
+import java.util.Map;
+import java.util.TreeMap;
+
+public class Chocolates extends Gift {
+	String name;
+	
+	public static TreeMap<String, Integer> tm1 = new TreeMap<String, Integer>();
+	public static TreeMap<String, Integer> tm2 = new TreeMap<String, Integer>();
+	
+	public Chocolates() {
+		name = "";
+		price = 0;
+		weight = 0;
+	}
+
+	public Chocolates(int price, int weight, String name) {
+		super();
+		this.price = price;
+		this.weight = weight;
+		this.name = name;
+		list.add(name);
+		wgt.add(weight);
+		cost.add(price);
+		if(!tm1.containsKey(name)) {
+			tm1.put(name, weight);
+		} else {
+			tm1.put(name, weight + tm1.get(name));
+			
+		}
+		if(!tm2.containsKey(name)) {
+			tm2.put(name, price);
+		} else {
+			tm2.put(name, price + tm2.get(name));	
+		}
+		
+	}
+
+    public static void sortByWeight() {
+    	TreeMap<String, Integer> sortedMap = sortByValues(tm1);
+		
+	}
+	
+	private static TreeMap<String, Integer> sortByValues(TreeMap<String, Integer> tm12) {
+		
+		Comparator<String> comparator = new ValueComparator(tm12);
+		TreeMap<String, Integer> result = new TreeMap<String, Integer>(comparator);
+		result.putAll(tm12);
+		return result;
+
+	}
+
+	public static void sortByPrice() {
+		
+	}
+		
+}
+class ValueComparator implements Comparator {
+	Map map;
+	public ValueComparator(Map map) {
+	    this.map = map;
+	}
+	public int compare(Object keyA, Object keyB) {
+	    Comparable valueA = (Comparable) map.get(keyA);
+	    Comparable valueB = (Comparable) map.get(keyB);
+	    return valueB.compareTo(valueA);
+	}
+}

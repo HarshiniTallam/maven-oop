@@ -1,0 +1,69 @@
+package com.epam2.oops;
+import java.util.*;
+public class GiftAnalysis {
+	static Scanner sc = new Scanner(System.in);
+	static TreeMap<String, Integer> ttm1 = new TreeMap<String, Integer>();
+	static TreeMap<String,Integer> ttm2 = new TreeMap<String, Integer>();
+	static TreeMap<String, Integer> tm1 = new TreeMap<String, Integer>();
+	static TreeMap<String, Integer> tm2 = new TreeMap<String, Integer>();
+	
+	static void inputSweets() {
+		System.out.println("Enter number of sweets:");
+		int scount = sc.nextInt();
+		for(int i = 0; i < scount; i++) {
+			System.out.println("Enter the sweet name:");
+			String name = sc.nextLine();
+			System.out.println("Enter the price:");
+			int p = sc.nextInt();
+			System.out.println("Enter the weight:");
+			int w = sc.nextInt();
+			if(!ttm1.containsKey(name)) {
+				ttm1.put(name, w);
+			} else {
+				ttm1.put(name, w + ttm1.get(name));
+				
+			}
+			if(!ttm2.containsKey(name)) {
+				ttm2.put(name, p);
+			} else {
+				ttm2.put(name, p + ttm2.get(name));
+				
+			}
+			
+		}
+	}
+	
+	static void inputChocolates() {
+		System.out.println("Enter number of chocolates:");
+		int scount = sc.nextInt();
+		for(int i = 0; i < scount; i++) {
+			System.out.println("Enter the sweet name:");
+			String name = sc.nextLine();
+			System.out.println("Enter the price:");
+			int p = sc.nextInt();
+			System.out.println("Enter the weight:");
+			int w = sc.nextInt();
+			if(!tm1.containsKey(name)) {
+				tm1.put(name, w);
+			} else {
+				tm1.put(name, w + tm1.get(name));
+				
+			}
+			if(!tm2.containsKey(name)) {
+				tm2.put(name, p);
+			} else {
+				tm2.put(name, p + tm2.get(name));
+				
+			}
+			
+		}
+	}
+	
+	
+	public static void main(String args[]) {
+		
+		
+		
+	}
+
+}

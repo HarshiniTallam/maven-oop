@@ -1,0 +1,18 @@
+package com.epam2.oops;
+
+public class Sweets {
+	int price, weight, name;
+	
+	public Sweets(int price, int weight, int name) {
+		super();
+		this.price = price;
+		this.weight = weight;
+		this.name = name;
+		list.add(name);
+		wgt.add(weight);
+		cost.add(price);
+	}
+	
+		
+
+}

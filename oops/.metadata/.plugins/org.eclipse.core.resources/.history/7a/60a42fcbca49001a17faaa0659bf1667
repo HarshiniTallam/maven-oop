@@ -1,0 +1,23 @@
+package com.epam2.oops;
+
+import java.util.TreeMap;
+
+public class Sweets extends Gift {
+	String name;
+	public static TreeMap<String, Integer> ttm1 = new TreeMap<String, Integer>();
+	public static TreeMap<String,Integer> ttm2 = new TreeMap<String, Integer>();
+	
+	
+	public Sweets(int price, int weight, String name) {
+		super();
+		this.price = price;
+		this.weight = weight;
+		this.name = name;
+		list.add(name);
+		wgt.add(weight);
+		cost.add(price);
+	}
+	
+		
+
+}

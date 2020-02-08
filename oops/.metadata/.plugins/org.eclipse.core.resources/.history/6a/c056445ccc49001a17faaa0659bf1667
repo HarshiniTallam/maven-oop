@@ -1,0 +1,19 @@
+package com.epam2.oops;
+
+public class Sweets extends Gift {
+	String name;
+	
+	
+	public Sweets(int price, int weight, String name) {
+		super();
+		this.price = price;
+		this.weight = weight;
+		this.name = name;
+		list.add(name);
+		wgt.add(weight);
+		cost.add(price);
+	}
+	
+		
+
+}

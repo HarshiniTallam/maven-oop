@@ -1,0 +1,6 @@
+package com.epam2.oops;
+
+abstract public class Gift {
+	int price, weight;
+
+}
